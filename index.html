@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>Aplikasi Bell Sekolah</title>
+    <style>
+      .img-logo {
+        width: 150px;
+        margin: 30px auto;
+      }
+      .btn {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="card" style="margin-top: 100px">
+            <img src="assets/images/logo.png" class="img-logo" alt="logo" />
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                Aplikasi Bell Sekolah Otomatis
+              </h5>
+              <p class="card-text text-center">
+                Aplikasi Bell Sekolah Berbasis Website Yang Dapat Membantu Pihak
+                Sekolah Untuk Menjalankan Sistem Lonceng Sekolah Secara Otomatis
+              </p>
+              <div class="row">
+                <div class="col-md-4">
+                  <button
+                    class="btn btn-primary btn-sm fullwidth"
+                    onclick="playBell()"
+                  >
+                    Bell
+                  </button>
+                  <audio id="audioBell" src="assets/audio/bell.mp3" />
+                </div>
+                <div class="col-md-4">
+                  <a href="timer.html">
+                    <button class="btn btn-primary btn-sm fullwidth">
+                      Pergantian Jam Pelajaran
+                    </button>
+                  </a>
+                </div>
+                <div class="col-md-4">
+                  <button
+                    class="btn btn-primary btn-sm fullwidth"
+                    onclick="playCeremony()"
+                  >
+                    Upacara Bendera
+                  </button>
+                  <audio id="audioCeremony" src="assets/audio/ceremony.mp3" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/sweetalert.js"></script>
+    <script>
+      function playBell() {
+        var audio = document.getElementById("audioBell");
+        audio.play();
+        swal("Memutar Bell");
+      }
+      function playCeremony() {
+        var audio = document.getElementById("audioCeremony");
+        audio.play();
+        swal("Memutar Bell Upacara");
+      }
+    </script>
+  </body>
+</html>
